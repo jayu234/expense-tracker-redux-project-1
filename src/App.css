@@ -1,38 +1,178 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+
+:root {
+  --box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  --bg-white: rgb(245 245 245);
+  --green: rgb(10, 159, 10);
+  --red: rgb(232, 75, 75);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+body {
+  background-color: #fafafa;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  min-height: 100vh;
+  margin: 0;
+  font-family: 'Lato', sans-serif;
 }
 
-.App-link {
-  color: #61dafb;
+.container {
+  width: 350px;
+  margin: 1.25rem auto;
+  overflow: hidden;
+  padding: 1.65rem;
+  background-color: rgb(187 197 207);
+  border-radius: 6px;
+  box-shadow: 0 1px 3px rgb(0 0 0 / 12%), 0 1px 2px rgb(0 0 0 / 24%);
+}
+.history-list{
+  list-style: none;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  margin: 0.25rem 0 0.5rem;
+}
+.history-list-item-1{
+  width: 100%;
+  text-align: center;
+  display: flex;
+  /* margin: 0 0.5rem 0.75rem; */
+  background-color: var(--bg-white);
+  justify-content: space-between;
+  padding: 0.5rem;
+  border-radius: 6px 0px 0px 6px;
+}
+.balance-box{
+  margin: 1rem 0 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.balance-box-item{
+  padding: 0.5rem;
+  font-size: 18px;
+  background-color: var(--bg-white);
+  display: flex;
+  flex-direction: column;
+  width: 47%;
+  align-items: flex-start;
+  justify-content: space-between;
+  height: 6rem;
+  border-radius: 6px;
+  box-shadow: var(--box-shadow);
+}
+.transaction-form form, .transaction-summary, .transaction-amount{
+  display: flex;
+  flex-direction: column;
+}
+.transaction-summary input, .transaction-amount input{
+  margin: 0.5rem 0 1rem;
+  height: 2rem;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  background-color: var(--bg-white);
+  font-size: 15px;
+  color: #5a5a5a;
+}
+.transaction-summary input:focus, .transaction-amount input:focus{
+  outline: 0;
+  border-color: #86b7fe;
+  background-color: #efecec;
+  transition: 0.3s;
+  box-shadow: 0 0 0 0.25rem rgb(13 110 253 / 60%);
+}
+.transaction-btn{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 1rem;
+}
+.add-transaction-btn{
+    padding: 10px 18px;
+    font-size: 16px;
+    border: none;
+    border-radius: 3px;
+    color: #2d2a2a;
+    box-shadow: none;
+    transition: box-shadow 200ms ease-in-out;
+}
+.add-transaction-btn:hover{
+  cursor: pointer;
+  box-shadow: 0px 2px 2px 1px #958f8f;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+@media only screen and (max-width: 320px) {
+  .container {
+    width: 100vw;
   }
 }
+/*.transaction-radio-btns{
+  width: 100%;
+  height: 45px;
+  display: flex;
+  justify-content: space-evenly;
+
+}
+.transaction-radio-btns input{
+  display: none;
+}
+.transaction-radio-btns label{
+  position: relative;
+  width: 100px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  background: #efefef;
+  margin-right: .3rem;
+  border: navajowhite;
+  border-radius: 4px;
+}
+.mark{
+  position: relative;
+  display: block;
+  width: 20px;
+  height: 20px;
+  border: 2px solid;
+  border-radius: 50%;
+  transition: .3s;
+}
+.mark::before{
+  content: "";
+  position: absolute;
+  top: 51%;
+  left: 49%;
+  transform:  translate(-50%, -50%);
+  width: 13px;
+  height: 13px;
+  background: #1294FC;
+  border-radius: 50%;
+  opacity: 0;
+  transition: .3s;
+}
+.transaction-radio-btn-border{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100px;
+  height: 45px;
+  border: 2px solid #dbdbdb;
+  border-radius: 4px;
+}
+input[type="radio"]:checked ~ .mark{
+  border-color: #1294FC;
+}
+input[type="radio"]:checked ~ .transaction-radio-btn-border{
+  border-color: #1294FC;
+}
+input[type="radio"]:checked ~ .mark::before{
+  opacity: 1;
+}*/
