@@ -10,9 +10,9 @@ function App() {
     <div className='container'>
       <Header/>
       <Balance/>
+      <AddTransaction/>
       <History/>
       <IncomeExpense/>
-      <AddTransaction/>
     </div>
   );
 }
