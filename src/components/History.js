@@ -38,7 +38,7 @@ function History() {
                             <p>{transaction.summary}</p>
                             <p>{transaction.amount}</p>
                         </div>
-                    </motion.li>))}
+                    </motion.li>)).reverse()}
             </motion.ul>
         </div>
     )
