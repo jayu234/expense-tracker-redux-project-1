@@ -35,14 +35,16 @@ body {
   bottom: 0px;
   box-shadow: 0 1px 3px rgb(0 0 0 / 12%), 0 1px 2px rgb(0 0 0 / 24%);
 }
-.history-list{
+
+.history-list {
   list-style: none;
   display: flex;
   width: 100%;
   justify-content: space-between;
   margin: 0.25rem 0 0.5rem;
 }
-.history-list-item-1{
+
+.history-list-item-1 {
   width: 100%;
   text-align: center;
   display: flex;
@@ -52,13 +54,15 @@ body {
   padding: 0.5rem;
   border-radius: 6px 0px 0px 6px;
 }
-.balance-box{
+
+.balance-box {
   margin: 1rem 0 1.5rem;
   display: flex;
   justify-content: space-between;
   width: 100%;
 }
-.balance-box-item{
+
+.balance-box-item {
   padding: 0.5rem;
   font-size: 18px;
   background-color: var(--bg-white);
@@ -71,56 +75,126 @@ body {
   border-radius: 6px;
   box-shadow: var(--box-shadow);
 }
-.transaction-form form, .transaction-summary, .transaction-amount{
+
+.transaction-form form,
+.transaction-summary,
+.transaction-amount,
+.login-form form,
+.login-form-e1,
+.login-form-e2,
+.signup-form-e1,
+.signup-form-e2,
+.signup-form-e3 {
   display: flex;
   flex-direction: column;
 }
-.transaction-summary input, .transaction-amount input{
-  margin: 0.5rem 0 1rem;
+
+.transaction-summary input,
+.transaction-amount input,
+.login-form-e1 input,
+.login-form-e2 input,
+.signup-form-e1 input,
+.signup-form-e2 input,
+.signup-form-e3 input {
+  margin: 0.5rem 0rem 1rem;
   height: 2rem;
   border: 1px solid #ced4da;
   border-radius: 0.25rem;
   background-color: var(--bg-white);
   font-size: 15px;
-  color: #5a5a5a;
+  /* color: #5a5a5a; */
   padding: 0 0.5rem;
 }
-.transaction-summary input:focus, .transaction-amount input:focus{
+
+.transaction-summary input:focus,
+.transaction-amount input:focus,
+.login-form-e1 input:focus,
+.login-form-e2 input:focus,
+.signup-form-e1 input:focus,
+.signup-form-e2 input:focus,
+.signup-form-e3 input:focus {
   outline: 0;
   border-color: #86b7fe;
   background-color: #efecec;
   transition: 0.3s;
   box-shadow: 0 0 0 0.25rem rgb(13 110 253 / 60%);
 }
-.transaction-btn{
+
+.transaction-btn {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
   margin-top: 1rem;
 }
-.add-transaction-btn{
-    padding: 10px 18px;
-    font-size: 16px;
-    border: none;
-    border-radius: 3px;
-    color: #2d2a2a;
-    box-shadow: none;
-    transition: box-shadow 200ms ease-in-out;
+
+.add-transaction-btn,
+.login-btn,
+.signup-btn {
+  padding: 10px 18px;
+  font-size: 16px;
+  border: none;
+  border-radius: 3px;
+  color: #2d2a2a;
+  box-shadow: none;
+  transition: box-shadow 200ms ease-in-out;
+  font-family: 'Lato', sans-serif;
 }
-.add-transaction-btn:hover{
+
+.add-transaction-btn:hover,
+.login-btn:hover,
+.signup-btn:hover {
   cursor: pointer;
-  box-shadow: 0px 2px 2px 1px #958f8f;
+  box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
 }
+
+.login-container,
+.signup-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10rem;
+}
+
+.login-heading, .signup-heading {
+  text-align: center;
+  font-size: 28px;
+}
+
+.login-footer, .signup-footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* margin-top: 6rem; */
+}
+
+.login-btn, .signup-btn {
+  background-color: rgb(55, 81, 255);
+  color: rgb(229, 228, 228);
+  display: block;
+  margin: 2rem auto;
+  width: 100%;
+}
+ 
+.login-btn:disabled, .signup-btn:disabled{
+  background-color: rgb(119, 137, 251);
+  cursor: default;
+  box-shadow: none;
+}
+
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
+
 @media only screen and (max-width: 320px) {
   .container {
     width: 100vw;
   }
 }
+
 /*.transaction-radio-btns{
   width: 100%;
   height: 45px;

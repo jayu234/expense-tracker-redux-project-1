@@ -27,6 +27,7 @@ function History() {
             <h4>History</h4>
             <div style={{ width: '100%', height: '2px', background: '#6e6c6c', margin: '0.5rem 0 1rem' }}></div>
             {/* <motion.ul layout style={{ width: '100%' }}> */}
+            { !transactions.length  && <h5 style={{ color: "#555252", textAlign: 'center'}} >No data to display.</h5>}
             <motion.ul
                 variants={container}
                 initial="hidden"
