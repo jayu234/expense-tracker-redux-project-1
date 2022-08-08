@@ -1,8 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
-import balanceSlice from './balanceSlice';
-
+import balanceReducer from './balanceSlice';
+import authReducer from './authSlice';
 const store = configureStore({
-    reducer: balanceSlice.reducer
+    reducer: {
+        balance: balanceReducer,
+        auth: authReducer
+    }
 });
 
 export default store;

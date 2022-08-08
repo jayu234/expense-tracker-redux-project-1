@@ -20,7 +20,7 @@ function History() {
         show: { opacity: 1 }
     }
 
-    const transactions = useSelector(state => state.transactions);
+    const transactions = useSelector(state => state.balance.transactions);
     // console.log(transactions);
     return (
         <div style={{ margin: '1rem 0' }}>

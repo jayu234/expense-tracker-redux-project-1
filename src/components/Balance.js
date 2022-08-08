@@ -3,8 +3,8 @@ import { useSelector } from 'react-redux'
 
 function Balance() {
 
-    const income = useSelector(state => state.income);
-    const expence = useSelector(state => state.expence);
+    const income = useSelector(state => state.balance.income);
+    const expence = useSelector(state => state.balance.expence);
     return (
         <div> 
             <div className='total-balance-history'>

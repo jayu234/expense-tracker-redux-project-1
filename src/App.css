@@ -147,18 +147,9 @@ body {
   box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
 }
 
-.login-container,
-.signup-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-top: 10rem;
-}
-
 .login-heading, .signup-heading {
   text-align: center;
-  font-size: 28px;
+  font-size: 32px;
 }
 
 .login-footer, .signup-footer {
@@ -183,6 +174,19 @@ body {
   box-shadow: none;
 }
 
+.alert-box{
+  margin: 1.75rem 0rem;
+  padding: 0.5rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color:#e9e6e7;
+  border: 1px solid #ead8da;
+  border-radius: 6px;
+}
+.alert-box span svg{
+  filter: invert(13%) sepia(25%) saturate(6865%) hue-rotate(336deg) brightness(104%) contrast(91%);
+}
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;

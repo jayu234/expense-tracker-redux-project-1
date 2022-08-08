@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
-import { actions } from '../store/balanceSlice';
+import { addIncome, addExpence, addTransaction } from '../store/balanceSlice';
 
 
 const AddTransaction = () => {
@@ -10,15 +10,15 @@ const AddTransaction = () => {
 
   const dispatch = useDispatch();
 
-  const addIncome = ()=>{
-    dispatch( actions.addIncome(amount) );
-    dispatch( actions.addTransaction({summary: summary, amount: amount, type: 'income'}) );
+  const addAsIncome = ()=>{
+    dispatch( addIncome(amount) );
+    dispatch( addTransaction({summary: summary, amount: amount, type: 'income'}) );
     setAmount('');
     setSummary('');
   }
-  const addExpence = ()=>{
-    dispatch( actions.addExpence(amount) );
-    dispatch( actions.addTransaction({summary: summary, amount: amount, type: 'expence'}) );
+  const addAsExpence = ()=>{
+    dispatch( addExpence(amount) );
+    dispatch( addTransaction({summary: summary, amount: amount, type: 'expence'}) );
     setAmount('');
     setSummary('');
   }
@@ -42,8 +42,8 @@ const AddTransaction = () => {
         </div>
       </form>
       <div className="transaction-btn">
-        <button className='add-transaction-btn' style={{ backgroundColor: '#31cc31'}} onClick={addIncome}>Add Income</button>
-        <button className='add-transaction-btn' style={{ backgroundColor: '#e55858'}} onClick={addExpence}>Add Expense</button>
+        <button className='add-transaction-btn' style={{ backgroundColor: '#31cc31'}} onClick={addAsIncome}>Add Income</button>
+        <button className='add-transaction-btn' style={{ backgroundColor: '#e55858'}} onClick={addAsExpence}>Add Expense</button>
       </div>
     </div>
   )

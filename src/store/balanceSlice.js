@@ -3,18 +3,18 @@ import { createSlice } from "@reduxjs/toolkit";
 const balanceSlice = createSlice({
     name: 'balance',
     initialState: {
-        income: 0, 
+        income: 0,
         expence: 0,
         transactions: []
     },
     reducers: {
-        addIncome(state, actions) {
+        addIncome: (state, actions) => {
             state.income += actions.payload;
         },
-        addExpence(state, actions) {
+        addExpence: (state, actions) => {
             state.expence += actions.payload;
         },
-        addTransaction(state, actions){
+        addTransaction: (state, actions) => {
             const transaction = actions.payload;
 
             state.transactions.push({
@@ -26,6 +26,6 @@ const balanceSlice = createSlice({
     }
 })
 
-export const actions = balanceSlice.actions;
+export const { addIncome, addExpence, addTransaction } = balanceSlice.actions;
 
-export default balanceSlice;
+export default balanceSlice.reducer;
