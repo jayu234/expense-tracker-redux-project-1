@@ -21,7 +21,6 @@ function History() {
     }
 
     const transactions = useSelector(state => state.balance.transactions);
-    // console.log(transactions);
     return (
         <div style={{ margin: '1rem 0' }}>
             <h4>History</h4>

@@ -1,10 +1,12 @@
 import { configureStore } from "@reduxjs/toolkit";
 import balanceReducer from './balanceSlice';
-import authReducer from './authSlice';
+import userReducer from './userSlice';
+
+
 const store = configureStore({
     reducer: {
         balance: balanceReducer,
-        auth: authReducer
+        user: userReducer
     }
 });
 

@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
-import { addIncome, addExpence, addTransaction } from '../store/balanceSlice';
+import { createTransaction } from '../store/balanceSlice';
 
 
 const AddTransaction = () => {
@@ -11,14 +11,14 @@ const AddTransaction = () => {
   const dispatch = useDispatch();
 
   const addAsIncome = ()=>{
-    dispatch( addIncome(amount) );
-    dispatch( addTransaction({summary: summary, amount: amount, type: 'income'}) );
+    // dispatch( addIncome(amount) );
+    dispatch( createTransaction({summary: summary, amount: amount, type: 'income'}) );
     setAmount('');
     setSummary('');
   }
   const addAsExpence = ()=>{
-    dispatch( addExpence(amount) );
-    dispatch( addTransaction({summary: summary, amount: amount, type: 'expence'}) );
+    // dispatch( addExpence(amount) );
+    dispatch( createTransaction({summary: summary, amount: amount, type: 'expence'}) );
     setAmount('');
     setSummary('');
   }

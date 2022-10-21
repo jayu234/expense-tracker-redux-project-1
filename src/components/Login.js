@@ -1,15 +1,14 @@
-import React, { useState } from 'react'
-import { useEffect } from 'react';
+import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from "react-router-dom";
-import { userLogin } from '../store/authSlice';
+import { userLogin } from '../store/userSlice';
 import { motion } from 'framer-motion';
 
-
-const successColor = { text: "#0f5132", bg: "#d1e7dd"};
-const failureColor = { text: "#842029", bg: "#f8d7da" }; 
+const successColor = { text: "#0f5132", bg: "#d1e7dd" };
+const failureColor = { text: "#842029", bg: "#f8d7da" };
 
 function Login() {
+
     const container = {
         hidden: { opacity: 0 },
         show: {
@@ -20,29 +19,31 @@ function Login() {
         }
     }
 
-    const item = {
-        hidden: { opacity: 0 },
-        show: { opacity: 1 }
-    }
-
     const navigate = useNavigate();
     const dispatch = useDispatch();
     const [credentials, setCredentials] = useState({ email: "", password: "" });
     const [alertBox, setAlertBox] = useState(false);
-    const { user, loading, success, isError, message } = useSelector((state) => state.auth);
-    const [alertColors, setColors] = useState({ });
-    useEffect(() => {
-        if (success) {
-            setColors(successColor);
-            setAlertBox(true)
-            setTimeout(() => { navigate("/") }, 1500)
+    const { user, loading, success, isError, message } = useSelector((state) => state.user);
+    const [alertColors, setColors] = useState({});
+
+    // useEffect(() => {
+    //     if (success) {
+    //         setColors(successColor);
+    //         setAlertBox(true)
+    //         setTimeout(() => { navigate("/") }, 1500)
+    //     }
+    //     if (isError) {
+    //         setColors(failureColor);
+    //         setAlertBox(true)
+    //         setTimeout(() => { setAlertBox(false) }, 1500)
+    //     }
+    //     // eslint-disable-next-line
+    // }, [isError, success])
+    useEffect(()=>{
+        if(user){
+            navigate("/")
         }
-        if (isError) {
-            setColors(failureColor);
-            setAlertBox(true)
-            setTimeout(() => { setAlertBox(false) }, 1500)
-        }
-    }, [user, isError, success])
+    },[user])
     return (
         <div className='login-form' style={{ margin: '3rem 0rem 2rem' }} >
             <h4 className='login-heading'>Login</h4>
@@ -50,7 +51,7 @@ function Login() {
             {/* { isError && <p style={{ margin: '2.25rem 0rem', textAlign: 'center', fontSize: '18px', color: 'red'}} > { message } </p> } */}
             {alertBox && <motion.div variants={container}
                 initial="hidden"
-                animate="show" className='alert-box' style={{backgroundColor: alertColors.bg}}>
+                animate="show" className='alert-box' style={{ backgroundColor: alertColors.bg }}>
                 {success ?
                     <p style={{ color: alertColors.text, width: '100%', marginLeft: '10px' }} >Login Successfully!!</p>
                     : <p style={{ color: alertColors.text, width: '100%', marginLeft: '10px' }} >{message}</p>
