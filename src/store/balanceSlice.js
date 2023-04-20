@@ -44,7 +44,6 @@ const balanceSlice = createSlice({
     initialState,
     reducers: {
         reset: (state) => {
-            console.log("inside balance state");
             state.income = 0
             state.expense = 0
             state.transactions = []
